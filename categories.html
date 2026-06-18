@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Categories</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#f5f5f5;
+            padding:20px;
+            font-family:Arial, sans-serif;
+        }
+
+        .title{
+            text-align:center;
+            margin-bottom:40px;
+            color:#333;
+            font-size:clamp(2rem,5vw,3rem);
+        }
+
+        /* CATEGORY SECTION */
+        .button-container{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:30px;
+            margin-bottom:40px;
+        }
+
+        .category-card{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+
+        /* Circle Images */
+        .category-card img{
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            object-fit:cover;
+            cursor:pointer;
+            margin-bottom:12px;
+            border:4px solid white;
+            transition:all 0.5s ease;
+
+            box-shadow:
+                0 0 10px #ff0000,
+                0 0 20px #ff7300,
+                0 0 30px #fffb00,
+                0 0 40px #48ff00;
+        }
+
+        .category-card img:hover{
+            transform:scale(1.12) rotate(5deg);
+
+            box-shadow:
+                0 0 15px #ff0000,
+                0 0 25px #ff7300,
+                0 0 35px #fffb00,
+                0 0 45px #48ff00,
+                0 0 55px #00ffd5,
+                0 0 65px #002bff,
+                0 0 75px #7a00ff;
+        }
+
+        /* Buttons */
+        .category-card button{
+            padding:12px 25px;
+            border:none;
+            border-radius:30px;
+            background:linear-gradient(45deg,#ff6b6b,#ffb347);
+            color:white;
+            font-size:16px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:all 0.4s ease;
+        }
+
+        .category-card button:hover{
+            transform:translateY(-5px) scale(1.08);
+            box-shadow:0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .category-card button:active{
+            transform:scale(0.95);
+        }
+
+        /* Gallery */
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-top:20px;
+        }
+
+        .gallery .item{
+            background:white;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:all 0.4s ease;
+        }
+
+        .gallery .item:hover{
+            transform:translateY(-10px);
+            box-shadow:0 15px 30px rgba(0,0,0,0.25);
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:20px;
+            transition:all 0.6s ease;
+            cursor:pointer;
+        }
+
+        .gallery img:hover{
+            transform:scale(1.12) rotate(2deg);
+            filter:brightness(1.15) contrast(1.1) saturate(1.2);
+            box-shadow:
+                0 0 10px #ff0000,
+                0 0 20px #ff7300,
+                0 0 30px #fffb00,
+                0 0 40px #48ff00,
+                0 0 50px #00ffd5,
+                0 0 60px #002bff,
+                0 0 70px #7a00ff;
+        }
+
+        /* Mobile Responsive */
+        @media(max-width:768px){
+
+            .category-card img{
+                width:100px;
+                height:100px;
+            }
+
+            .category-card button{
+                width:150px;
+            }
+
+            .gallery img{
+                height:220px;
+            }
+        }
+
+        @media(max-width:480px){
+
+            .button-container{
+                gap:20px;
+            }
+
+            .category-card img{
+                width:90px;
+                height:90px;
+            }
+
+            .category-card button{
+                width:140px;
+                font-size:14px;
+            }
+
+            .gallery{
+                grid-template-columns:1fr;
+            }
+
+            .gallery img{
+                height:200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 class="title">Select The Category</h1>
+
+<div class="button-container">
+
+    <div class="category-card">
+        <img src="https://sadhiyafoods.com/cdn/shop/files/DSC07049.png?v=1758891448&width=1100" alt="Putharekulu" onclick="showCategory('almonds')">
+        <button onclick="showCategory('almonds')">Putharekulu</button>
+    </div>
+
+    <div class="category-card">
+        <img src="https://img.freepik.com/premium-photo/assorted-candied-berries-dried-fruits-nuts-seeds-top-view-healthy-food-background_84485-2116.jpg?w=2000" alt="Dry Fruits" onclick="showCategory('cashews')">
+        <button onclick="showCategory('cashews')">Dry Fruits</button>
+    </div>
+
+    <div class="category-card">
+        <img src="https://savithrammas.com/site/image/cache/catalog/A-Guide-to-Savithrammas-Exotic-Pickles-and-Spices-1080x540.jpg" alt="Pickles" onclick="showCategory('pistachios')">
+        <button onclick="showCategory('pistachios')">Pickles</button>
+    </div>
+
+    <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="Sweets" onclick="showCategory('raisins')">
+        <button onclick="showCategory('raisins')">Sweets</button>
+    </div>
+
+    <div class="category-card">
+        <img src="https://koodai.co.uk/cdn/shop/files/Jaffna_Hot_Mixture.jpg?v=1686050224" alt="Hot" onclick="showCategory('walnuts')">
+        <button onclick="showCategory('walnuts')">Hot</button>
+    </div>
+
+</div>
+
+<div id="gallery" class="gallery"></div>
+
+<script src="D:\vs code1\homefoods\.js"></script>
+
+</body>
+</html>
