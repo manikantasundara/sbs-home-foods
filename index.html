@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dry Fruit Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    min-height:100vh;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Logo Container */
+.logo-container{
+    position:relative;
+    width:90%;
+    max-width:700px;
+    margin:30px auto;
+    padding:20px;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+/* RGB Animated Border */
+.rgb-border{
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:conic-gradient(
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    animation:rotate 4s linear infinite;
+}
+
+.logo-container::after{
+    content:"";
+    position:absolute;
+    inset:5px;
+    background:#111;
+    border-radius:15px;
+    z-index:1;
+}
+
+.content{
+    position:relative;
+    z-index:2;
+}
+
+/* RGB Text */
+.rgb-text{
+    font-size:3rem;
+    margin-bottom:20px;
+    animation:rgbText 3s linear infinite;
+    text-shadow:
+        0 0 10px red,
+        0 0 20px blue,
+        0 0 30px lime;
+}
+
+/* Image */
+.logo-img{
+    width:100%;
+    max-width:350px;
+    height:auto;
+    border-radius:15px;
+}
+
+/* Welcome Text */
+h1{
+    margin-top:20px;
+}
+
+/* Button */
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 30px;
+    background:#ff9800;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    background:#ff5722;
+}
+
+/* Contact */
+h4{
+    margin-top:40px;
+    font-size:24px;
+}
+
+h5{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* Animations */
+@keyframes rotate{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes rgbText{
+    0%{color:red;}
+    25%{color:yellow;}
+    50%{color:lime;}
+    75%{color:cyan;}
+    100%{color:red;}
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .rgb-text{
+        font-size:2rem;
+    }
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    .btn{
+        width:90%;
+        max-width:300px;
+        font-size:16px;
+    }
+
+    h4{
+        font-size:20px;
+    }
+
+    h5{
+        font-size:16px;
+    }
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+
+    .rgb-text{
+        font-size:1.5rem;
+    }
+
+    h1{
+        font-size:1.4rem;
+    }
+
+    .logo-container{
+        width:95%;
+        padding:15px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="logo-container">
+    <div class="rgb-border"></div>
+
+    <div class="content">
+        <h1 class="rgb-text">SBS HOME FOODS</h1>
+
+    </div>
+</div>
+
+<h1>Welcome To Our DryFruit Shop</h1>
+<br><br>
+<a href="categories.html" class="btn">
+    Click Here To Check The Items
+</a>
+
+<h4 style="color: red;">Contact Us</h4>
+<h5>Ph: 96760 44760</h5>
+<br>
+<a href="D:\vs code1\homefoods\info.html" class="btn">
+    Address
+</a>
+
+</body>
+</html>
