@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+    <link rel="stylesheet" href="D:\vs code1\homefoods\.css">
+</head>
+<body>
+
+<div class="details-container">
+
+    <img id="productImage" class="detail-img">
+
+    <h2 id="productName"></h2>
+
+    <table>
+        <tr>
+            <td>Price</td>
+            <td id="price"></td>
+        </tr>
+
+        <tr>
+            <td>Special</td>
+            <td id="special"></td>
+        </tr>
+
+    
+
+        
+
+        <tr>
+            <td>NoOfPieces</td>
+            <td id="NoOfPieces"></td>
+        </tr>
+        <tr>
+            <td>weight</td>
+            <td id="weight"></td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+
+let product=JSON.parse(localStorage.getItem("selectedProduct"));
+
+document.getElementById("productImage").src=product.image;
+document.getElementById("productName").innerHTML=product.name;
+document.getElementById("price").innerHTML=product.price;
+document.getElementById("special").innerHTML=product.special;
+document.getElementById("NoOfPieces").innerHTML=product.NoOfPieces;
+document.getElementById("weight").innerHTML=product.weight;
+
+</script>
+
+</body>
+</html>
